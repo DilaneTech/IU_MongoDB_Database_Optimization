@@ -1,0 +1,67 @@
+{
+  "label": "docker_1.5g_baseline",
+  "schema": "baseline",
+  "uri": "mongodb://mongo:27017",
+  "read_pref": "primary",
+  "writers": 2,
+  "readers": 4,
+  "duration_s": 120,
+  "removed_before_run": 2173300,
+  "cache_at_start": {
+    "used_mb": 205,
+    "max_mb": 256,
+    "dirty_mb": 0
+  },
+  "writes": {
+    "docs": 2376400,
+    "seconds": 120.0,
+    "docs_per_sec": 19802,
+    "batch_latency": {
+      "count": 23764,
+      "mean_ms": 5.48,
+      "p50_ms": 4.13,
+      "p95_ms": 13.94,
+      "p99_ms": 29.81
+    }
+  },
+  "reads": {
+    "ops": 24,
+    "ops_per_sec": 0.2,
+    "per_query": {
+      "client_history": {
+        "count": 11,
+        "mean_ms": 22159.13,
+        "p50_ms": 21767.6,
+        "p95_ms": 28975.13,
+        "p99_ms": 30165.82
+      },
+      "card_transactions": {
+        "count": 2,
+        "mean_ms": 13253.65,
+        "p50_ms": 13253.65,
+        "p95_ms": 20922.1,
+        "p99_ms": 21603.74
+      },
+      "spend_per_mcc": {
+        "count": 6,
+        "mean_ms": 22843.84,
+        "p50_ms": 23070.73,
+        "p95_ms": 25117.43,
+        "p99_ms": 25325.34
+      },
+      "errors_on_day": {
+        "count": 5,
+        "mean_ms": 24243.95,
+        "p50_ms": 24805.77,
+        "p95_ms": 26935.59,
+        "p99_ms": 27252.18
+      }
+    },
+    "timeouts": {
+      "client_history": 0,
+      "card_transactions": 0,
+      "spend_per_mcc": 0,
+      "errors_on_day": 0
+    }
+  }
+}

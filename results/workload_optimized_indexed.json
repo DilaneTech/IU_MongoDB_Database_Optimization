@@ -1,0 +1,55 @@
+{
+  "label": "optimized_indexed",
+  "schema": "optimized",
+  "uri": "mongodb://localhost:27017",
+  "read_pref": "primary",
+  "writers": 2,
+  "readers": 4,
+  "duration_s": 120,
+  "writes": {
+    "docs": 2344800,
+    "seconds": 120.0,
+    "docs_per_sec": 19538,
+    "batch_latency": {
+      "count": 23448,
+      "mean_ms": 6.76,
+      "p50_ms": 6.0,
+      "p95_ms": 10.28,
+      "p99_ms": 20.79
+    }
+  },
+  "reads": {
+    "ops": 168768,
+    "ops_per_sec": 1406.4,
+    "per_query": {
+      "client_history": {
+        "count": 41908,
+        "mean_ms": 1.62,
+        "p50_ms": 1.32,
+        "p95_ms": 3.34,
+        "p99_ms": 6.8
+      },
+      "card_transactions": {
+        "count": 42300,
+        "mean_ms": 2.03,
+        "p50_ms": 1.7,
+        "p95_ms": 4.06,
+        "p99_ms": 9.25
+      },
+      "spend_per_mcc": {
+        "count": 42189,
+        "mean_ms": 5.37,
+        "p50_ms": 2.66,
+        "p95_ms": 20.11,
+        "p99_ms": 39.01
+      },
+      "errors_on_day": {
+        "count": 42371,
+        "mean_ms": 2.29,
+        "p50_ms": 1.9,
+        "p95_ms": 4.59,
+        "p99_ms": 7.52
+      }
+    }
+  }
+}

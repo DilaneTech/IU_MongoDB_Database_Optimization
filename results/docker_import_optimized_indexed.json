@@ -1,0 +1,40 @@
+{
+  "users": {
+    "docs": 2000,
+    "seconds": 0.28,
+    "docs_per_sec": 7265,
+    "collection": "users_opt",
+    "avg_doc_bytes": 304,
+    "data_size_mb": 0.6,
+    "storage_size_mb": 0.2,
+    "index_size_mb": 0.0
+  },
+  "cards": {
+    "docs": 6146,
+    "seconds": 0.47,
+    "docs_per_sec": 13040,
+    "collection": "cards_opt",
+    "avg_doc_bytes": 272,
+    "data_size_mb": 1.6,
+    "storage_size_mb": 0.4,
+    "index_size_mb": 0.1
+  },
+  "transactions": {
+    "docs": 10644732,
+    "seconds": 558.32,
+    "docs_per_sec": 19066,
+    "collection": "transactions_opt_idx",
+    "avg_doc_bytes": 195,
+    "data_size_mb": 1982.3,
+    "storage_size_mb": 566.0,
+    "index_size_mb": 103.7
+  },
+  "mcc_codes": {
+    "docs": 109,
+    "collection": "mcc_codes_opt",
+    "avg_doc_bytes": 58,
+    "data_size_mb": 0.0,
+    "storage_size_mb": 0.0,
+    "index_size_mb": 0.0
+  }
+}

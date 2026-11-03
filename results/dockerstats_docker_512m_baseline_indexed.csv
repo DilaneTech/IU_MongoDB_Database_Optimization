@@ -1,0 +1,7 @@
+time,container,cpu,mem
+12:30:58,iu_nosql_project-mongo-1,102.63%,429.6MiB / 512MiB
+12:30:58,iu_nosql_project-app-1,23.50%,34.46MiB / 2GiB
+12:31:05,iu_nosql_project-mongo-1,103.26%,345.3MiB / 512MiB
+12:31:05,iu_nosql_project-app-1,0.04%,34.44MiB / 2GiB
+12:31:12,iu_nosql_project-mongo-1,379.09%,362.7MiB / 512MiB
+12:31:12,iu_nosql_project-app-1,0.08%,34.69MiB / 2GiB

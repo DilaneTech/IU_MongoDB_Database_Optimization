@@ -1,0 +1,76 @@
+{
+  "schema": "baseline",
+  "build_seconds": {
+    "client_date": 89.8,
+    "card_date": 102.5,
+    "mcc_date_amount": 108.9,
+    "date_errors_partial": 27.8
+  },
+  "index_size_mb": {
+    "_id_": 129.7,
+    "client_date": 225.8,
+    "card_date": 231.4,
+    "mcc_date_amount": 256.5,
+    "date_errors_partial": 3.0
+  },
+  "explain_before": {
+    "client_history": {
+      "plan": "SORT > COLLSCAN",
+      "keys_examined": 0,
+      "docs_examined": 10644732,
+      "returned": 20,
+      "time_ms": 19272
+    },
+    "card_transactions": {
+      "plan": "LIMIT > COLLSCAN",
+      "keys_examined": 0,
+      "docs_examined": 208709,
+      "returned": 50,
+      "time_ms": 342
+    },
+    "spend_per_mcc": {
+      "plan": "PROJECTION_SIMPLE > COLLSCAN",
+      "keys_examined": 0,
+      "docs_examined": 10644732,
+      "returned": 14045,
+      "time_ms": 20740
+    },
+    "errors_on_day": {
+      "plan": "COLLSCAN",
+      "keys_examined": 0,
+      "docs_examined": 10644732,
+      "returned": 70,
+      "time_ms": 21626
+    }
+  },
+  "explain_after": {
+    "client_history": {
+      "plan": "LIMIT > FETCH > IXSCAN",
+      "keys_examined": 20,
+      "docs_examined": 20,
+      "returned": 20,
+      "time_ms": 5
+    },
+    "card_transactions": {
+      "plan": "LIMIT > FETCH > IXSCAN",
+      "keys_examined": 50,
+      "docs_examined": 50,
+      "returned": 50,
+      "time_ms": 23
+    },
+    "spend_per_mcc": {
+      "plan": "PROJECTION_COVERED > IXSCAN",
+      "keys_examined": 14045,
+      "docs_examined": 0,
+      "returned": 14045,
+      "time_ms": 127
+    },
+    "errors_on_day": {
+      "plan": "FETCH > IXSCAN",
+      "keys_examined": 70,
+      "docs_examined": 70,
+      "returned": 70,
+      "time_ms": 22
+    }
+  }
+}

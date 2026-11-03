@@ -1,0 +1,64 @@
+# Constrained environment: only MongoDB's memory varies between runs
+# (MONGO_MEM=6g|3g|1.5g); the app container keeps fixed resources so that
+# slowdowns can be attributed to the database, not the client.
+#
+#   MONGO_MEM=3g docker compose up -d --build
+#   docker compose exec -T app python src/workload.py --schema optimized_indexed --label docker_3g_optimized_indexed
+services:
+  mongo:
+    image: mongo:8.2
+    mem_limit: ${MONGO_MEM:-6g}
+    memswap_limit: ${MONGO_MEM:-6g}  # no swap: the limit is a hard RAM limit
+    cpus: ${MONGO_CPUS:-4}
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27027:27017"  # host 27017 belongs to the Windows service
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      retries: 30
+
+  # Two copies (replica set rs0), started only with `--profile rs`. Each member
+  # gets the same limits as the single-node breaking point (RS_MEM / RS_CPUS).
+  mongo1: &rs-member
+    image: mongo:8.2
+    profiles: [rs]
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    mem_limit: ${RS_MEM:-1g}
+    memswap_limit: ${RS_MEM:-1g}
+    cpus: ${RS_CPUS:-2}
+    volumes:
+      - rs1-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      retries: 30
+
+  mongo2:
+    <<: *rs-member
+    volumes:
+      - rs2-data:/data/db
+
+  app:
+    build: .
+    mem_limit: 2g
+    memswap_limit: 2g
+    cpus: 2
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+      RESULT_PREFIX: docker_
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data:ro
+      - ./results:/app/results
+    working_dir: /app
+    command: sleep infinity
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+volumes:
+  mongo-data:
+  rs1-data:
+  rs2-data:

@@ -1,0 +1,32 @@
+{
+  "users": {
+    "docs": 2000,
+    "seconds": 0.06,
+    "docs_per_sec": 35471,
+    "data_size_mb": 0.6,
+    "storage_size_mb": 0.2,
+    "index_size_mb": 0.0
+  },
+  "cards": {
+    "docs": 6146,
+    "seconds": 0.09,
+    "docs_per_sec": 67258,
+    "data_size_mb": 1.9,
+    "storage_size_mb": 0.5,
+    "index_size_mb": 0.1
+  },
+  "transactions": {
+    "docs": 10644732,
+    "seconds": 197.95,
+    "docs_per_sec": 53775,
+    "data_size_mb": 2788.1,
+    "storage_size_mb": 741.6,
+    "index_size_mb": 108.7
+  },
+  "mcc_codes": {
+    "docs": 109,
+    "data_size_mb": 0.0,
+    "storage_size_mb": 0.0,
+    "index_size_mb": 0.0
+  }
+}

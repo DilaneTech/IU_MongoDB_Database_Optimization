@@ -1,0 +1,62 @@
+{
+  "transactions_per_year": 1392940,
+  "transactions_per_month": 116078,
+  "schemas": {
+    "baseline": {
+      "docs": 10644732,
+      "data_bytes_per_doc": 275,
+      "disk_bytes_per_doc": 73,
+      "index_bytes_per_doc": 83,
+      "index_mb_now": 846,
+      "index_growth_mb_per_year": 111,
+      "years_until_index_exceeds_cache": {
+        "x1": {
+          "on-premise (7.4 GB)": 60.6,
+          "docker 6g": 15.5,
+          "docker 3g": 1.6,
+          "docker 1-1.5g": 0
+        },
+        "x10": {
+          "on-premise (7.4 GB)": 6.1,
+          "docker 6g": 1.5,
+          "docker 3g": 0.2,
+          "docker 1-1.5g": 0
+        },
+        "x100": {
+          "on-premise (7.4 GB)": 0.6,
+          "docker 6g": 0.2,
+          "docker 3g": 0.0,
+          "docker 1-1.5g": 0
+        }
+      }
+    },
+    "optimized": {
+      "docs": 10644732,
+      "data_bytes_per_doc": 195,
+      "disk_bytes_per_doc": 56,
+      "index_bytes_per_doc": 65,
+      "index_mb_now": 663,
+      "index_growth_mb_per_year": 87,
+      "years_until_index_exceeds_cache": {
+        "x1": {
+          "on-premise (7.4 GB)": 79.5,
+          "docker 6g": 21.9,
+          "docker 3g": 4.2,
+          "docker 1-1.5g": 0
+        },
+        "x10": {
+          "on-premise (7.4 GB)": 7.9,
+          "docker 6g": 2.2,
+          "docker 3g": 0.4,
+          "docker 1-1.5g": 0
+        },
+        "x100": {
+          "on-premise (7.4 GB)": 0.8,
+          "docker 6g": 0.2,
+          "docker 3g": 0.0,
+          "docker 1-1.5g": 0
+        }
+      }
+    }
+  }
+}
